@@ -1,0 +1,142 @@
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #f8f8f8;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 25px;
+      border-bottom: 2px solid #eab1d3;
+    }
+
+    h1 {
+      color: #ffb7d5;
+      font-size: 2.8em;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #ffb7d5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .nosotros img {
+      width: 220px;
+      border-radius: 50%;
+      border: 3px solid #ffb7d5;
+      margin-bottom: 15px;
+    }
+
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(255,183,213,0.3);
+      transition: transform .3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 50%;
+      border-radius: 10px;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ffb7d5;
+      color: #111;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #000;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #ffb7d5;
+    }
+
+.hero {
+  background: url('descarga.jpg') no-repeat center center/cover;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.hero-text h2 {
+  font-size: 2.5em;
+  color: #ffb7d5;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  color: #f8f8f8;
+}
+
+.catalogo {
+  padding: 40px;
+  text-align: center;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.catalogo-item {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(255,183,213,0.3);
+  transition: transform .3s;
+}
+
+.catalogo-item:hover {
+  transform: scale(1.05);
+}
+
+.catalogo-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.catalogo-item h3 {
+  margin: 10px 0;
+  color: #ffb7d5;
+}
+
+.catalogo-item p {
+  color: #ccc;
+  font-size: 0.9em;
+}

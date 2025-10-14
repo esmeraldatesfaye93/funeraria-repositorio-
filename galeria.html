@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Glow Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 14px;
+      width: 350px;
+      box-shadow: 0 0 15px rgba(255,183,213,0.4);
+      text-align: left;
+      color: #fff;
+      position: relative;
+      animation: aparecer 0.3s ease;
+    }
+
+    @keyframes aparecer {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-content h2 {
+      color: #ffb7d5;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .modal-content label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ffb7d5;
+    }
+
+    .modal-content input,
+    .modal-content select {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 5px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .modal-content button {
+      width: 100%;
+      background: #ffb7d5;
+      color: #111;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.8em;
+      cursor: pointer;
+      color: #ffb7d5;
+    }
+
+    .cerrar:hover {
+      color: #fff;
+    }
+
+    /* --- Modal de confirmación --- */
+    #confirmacion {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+    }
+
+    #confirmacion .modal-content {
+      width: 300px;
+      text-align: center;
+    }
+
+    #confirmacion button {
+      width: 45%;
+      margin: 5px 2%;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+    <h1>Glow Studio</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="citas.html">Agendar citas</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Catálogo de Estilos</h2>
+      <p>Inspírate y elige el look que más te defina 💋</p>
+    </div>
+  </section>
+
+  <main class="catalogo">
+    <h2>💅 Nuestros Looks Más Solicitados</h2>
+
+    <div class="catalogo-grid">
+      <div class="catalogo-item">
+        <img src="cortes de pelo pag.jpg" alt="Corte moderno">
+        <h3>Corte Moderno</h3>
+        <p>Ideal para un cambio fresco y elegante. Perfecto para cualquier ocasión.</p>
+        <button class="boton" onclick="abrirFormulario('Corte Moderno')">Agendar</button>
+      </div>
+
+      <div class="catalogo-item">
+        <img src="https://via.placeholder.com/300x350" alt="Maquillaje Glamour">
+        <h3>Maquillaje Glamour</h3>
+        <p>Brilla con un acabado profesional para bodas, fiestas y eventos.</p>
+        <button class="boton" onclick="abrirFormulario('Maquillaje Glamour')">Agendar</button>
+      </div>
+
+      <div class="catalogo-item">
+        <img src="https://via.placeholder.com/300x350" alt="Color Miel Dorado">
+        <h3>Color Miel Dorado</h3>
+        <p>Un tinte cálido que ilumina tu rostro y resalta tu estilo natural.</p>
+        <button class="boton" onclick="abrirFormulario('Color Miel Dorado')">Agendar</button>
+      </div>
+
+      <div class="catalogo-item">
+        <img src="https://via.placeholder.com/300x350" alt="Uñas French">
+        <h3>Uñas French Clásicas</h3>
+        <p>Un toque limpio y sofisticado que nunca pasa de moda.</p>
+        <button class="boton" onclick="abrirFormulario('Uñas French Clásicas')">Agendar</button>
+      </div>
+
+      <div class="catalogo-item">
+        <img src="https://via.placeholder.com/300x350" alt="Pestañas Volumen 3D">
+        <h3>Pestañas Volumen 3D</h3>
+        <p>Realza tu mirada con un efecto natural y duradero.</p>
+        <button class="boton" onclick="abrirFormulario('Pestañas Volumen 3D')">Agendar</button>
+      </div>
+
+      <div class="catalogo-item">
+        <img src="https://via.placeholder.com/300x350" alt="Peinado de Evento">
+        <h3>Peinado de Evento</h3>
+        <p>Desde trenzas elegantes hasta recogidos modernos, ¡resalta tu estilo!</p>
+        <button class="boton" onclick="abrirFormulario('Peinado de Evento')">Agendar</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Glow Studio | Belleza, estilo y confianza</p>
+  </footer>
+
+  <!-- Modal de agendar cita -->
+  <div id="formularioCita" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarFormulario()">&times;</span>
+      <h2>Agendar Cita</h2>
+      <form id="citaForm">
+        <label>Nombre:</label>
+        <input type="text" id="nombreCita" placeholder="Tu nombre" required>
+
+        <label>Servicio:</label>
+        <select id="servicioSeleccionado">
+          <option value="">Selecciona un servicio</option>
+          <option>Corte Moderno</option>
+          <option>Maquillaje Glamour</option>
+          <option>Color Miel Dorado</option>
+          <option>Uñas French Clásicas</option>
+          <option>Pestañas Volumen 3D</option>
+          <option>Peinado de Evento</option>
+        </select>
+
+        <label>Fecha:</label>
+        <input type="date" id="fechaCita" required>
+
+        <label>Hora:</label>
+        <input type="time" id="horaCita" required>
+
+        <button type="submit">Confirmar cita</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de confirmación -->
+  <div id="confirmacion" class="modal">
+    <div class="modal-content">
+      <h2>¿Deseas enviar tu cita por WhatsApp?</h2>
+      <button id="enviarWhats">Enviar</button>
+      <button onclick="cerrarConfirmacion()">Cancelar</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirFormulario(servicio) {
+      document.getElementById("formularioCita").style.display = "flex";
+      document.getElementById("servicioSeleccionado").value = servicio;
+    }
+
+    function cerrarFormulario() {
+      document.getElementById("formularioCita").style.display = "none";
+    }
+
+    function abrirConfirmacion() {
+      document.getElementById("confirmacion").style.display = "flex";
+    }
+
+    function cerrarConfirmacion() {
+      document.getElementById("confirmacion").style.display = "none";
+    }
+
+    const form = document.getElementById("citaForm");
+    let mensajeWhats = "";
+    const numero = "5218124133922"; // Número de WhatsApp
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombreCita").value;
+      const servicio = document.getElementById("servicioSeleccionado").value;
+      const fecha = document.getElementById("fechaCita").value;
+      const hora = document.getElementById("horaCita").value;
+
+      mensajeWhats = `Hola, me gustaría agendar una cita.\n\nNombre: ${nombre}\nServicio: ${servicio}\nFecha: ${fecha}\nHora: ${hora}`;
+
+      abrirConfirmacion();
+    });
+
+    document.getElementById("enviarWhats").addEventListener("click", function() {
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensajeWhats)}`;
+      window.open(url, "_blank");
+      cerrarConfirmacion();
+      cerrarFormulario();
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
