@@ -6,7 +6,6 @@
   <title>Catálogo | Glow Studio</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-   
     .modal {
       display: none;
       position: fixed;
@@ -109,7 +108,7 @@
 </head>
 <body>
 
-    <header>
+  <header>
     <h1>Glow Studio</h1>
     <nav>
       <a href="index.html">Inicio</a>
@@ -189,7 +188,7 @@
         <input type="text" id="nombreCita" placeholder="Tu nombre" required>
 
         <label>Servicio:</label>
-        <select id="servicioSeleccionado">
+        <select id="servicioSeleccionado" required>
           <option value="">Selecciona un servicio</option>
           <option>Corte Moderno</option>
           <option>Maquillaje Glamour</option>
@@ -204,6 +203,13 @@
 
         <label>Hora:</label>
         <input type="time" id="horaCita" required>
+
+        <label>Método de pago:</label>
+        <select id="pagoCita" required>
+          <option value="">Selecciona una opción</option>
+          <option>Efectivo</option>
+          <option>Transferencia</option>
+        </select>
 
         <button type="submit">Confirmar cita</button>
       </form>
@@ -239,7 +245,7 @@
 
     const form = document.getElementById("citaForm");
     let mensajeWhats = "";
-    const numero = "5218124133922"; // Número de WhatsApp
+    const numero = "5218124133922"; // WhatsApp Glow Studio
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
@@ -248,8 +254,9 @@
       const servicio = document.getElementById("servicioSeleccionado").value;
       const fecha = document.getElementById("fechaCita").value;
       const hora = document.getElementById("horaCita").value;
+      const pago = document.getElementById("pagoCita").value;
 
-      mensajeWhats = `Hola, me gustaría agendar una cita.\n\nNombre: ${nombre}\nServicio: ${servicio}\nFecha: ${fecha}\nHora: ${hora}`;
+      mensajeWhats = `Hola, me gustaría agendar una cita 💅\n\n👩 Nombre: ${nombre}\n💖 Servicio: ${servicio}\n📅 Fecha: ${fecha}\n🕓 Hora: ${hora}\n💵 Método de pago: ${pago}`;
 
       abrirConfirmacion();
     });
